@@ -1,13 +1,7 @@
 <template>
   <div>
-    <v-btn
-      @click="getApi()"  
-    >
-     GET API
-    </v-btn>
-    <div>
-      {{ message }}
-    </div>
+    <p>{{message}}</p>
+    <NuxtLink to="inspire">to index page</NuxtLink>
   </div>
 </template>
 
@@ -15,19 +9,8 @@
 export default {
   data: () => {
     return {
-      message: ''
+      message: 'hello'
     }
   },
-  methods: {
-    getApi() {
-      this.$axios.get('http://localhost:8080/api/v1/hello')
-        .then((res) => {
-          this.message = res.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
-  }
 }
 </script>
