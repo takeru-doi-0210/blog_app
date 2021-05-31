@@ -1,22 +1,42 @@
 <template>
-    <v-toolbar app>
-        <v-toolbar-title>Title</v-toolbar-title>
+  <v-card>
+    <v-app-bar app>
+        <v-btn href="/" depressed>Noteのパクリ</v-btn>
         <v-spacer />
-        <v-toolbar-items v-for="item in items" :key="item.id">
-             <v-btn>{{item.title}}</v-btn>
-         </v-toolbar-items>
-    </v-toolbar>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <v-list class="pa-0">
+        <v-btn nuxt>ログイン</v-btn></v-btn>
+        <v-btn nuxt>新規登録</v-btn></v-btn>
+      </v-list>
+      <template v-slot:extension v-if="isHome">
+        <v-tabs align-with-title>
+          <v-tab>ホーム</v-tab>
+          <v-tab>話題</v-tab>
+          <v-tab>募集中</v-tab>
+        </v-tabs>
+      </template>
+    </v-app-bar>
+  </v-card>
 </template>
 
 
 <script>
+/*global $*/
 export default {
   data() {
     return {
-      items: [
-        {id: 1, title: "ログイン"},
-        {id: 2, title: "アカウント作成"}
-      ] 
+    }
+  },
+  computed: {
+    isHome() {
+      /*global location*/
+      return location.pathname == "/"
     }
   }
 }

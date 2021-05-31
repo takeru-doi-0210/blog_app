@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>{{message}}</p>
-    <NuxtLink to="inspire">to index page</NuxtLink>
+    <h1>{{message}}</h1>
+    <NuxtLink to="inspire">to inspire page</NuxtLink>
   </div>
 </template>
 
