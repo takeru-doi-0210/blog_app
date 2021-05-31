@@ -11,8 +11,8 @@
         <v-icon>mdi-heart</v-icon>
       </v-btn>
       <v-list class="pa-0">
-        <v-btn nuxt>ログイン</v-btn></v-btn>
-        <v-btn nuxt>新規登録</v-btn></v-btn>
+        <v-btn nuxt href="login">ログイン</v-btn></v-btn>
+        <v-btn nuxt href="create">新規登録</v-btn></v-btn>
       </v-list>
       <template v-slot:extension v-if="isHome">
         <v-tabs align-with-title>
