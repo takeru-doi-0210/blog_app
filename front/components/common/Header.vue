@@ -12,24 +12,8 @@
         <v-tabs align-with-title v-model="tab">
           <v-tab v-for="text in texts" :key="text.id" nuxt link :to="text.url">{{text.title}}</v-tab>
         </v-tabs>
-        <!--<Nuxt></Nuxt>-->
       </template>
     </v-app-bar>
-    
-    <!--<v-tabs-items v-model="tab">-->
-    <!--  <v-sheet>-->
-    <!--    <v-container height="300px">-->
-    <!--      <v-tab-item-->
-    <!--        v-for="item in items"-->
-    <!--        :key="item"-->
-    <!--      >-->
-    <!--        <v-card flat>-->
-    <!--          <v-card-text v-text="text"></v-card-text>-->
-    <!--        </v-card>-->
-    <!--      </v-tab-item>-->
-    <!--    </v-container>-->
-    <!--    </v-sheet>-->
-    <!--</v-tabs-items>-->
   </v-card>
 </template>
 
@@ -43,8 +27,8 @@ export default {
       items: ["HOME", "話題", "サークル"],
       texts: [
         {title: "1", url: "/"},
-        {title: "2", url: "/create"},
-        {title: "3", url: "/login"},
+        {title: "2", url: "/recommend"},
+        {title: "3", url: "/circle"},
       ]
     }
   },
