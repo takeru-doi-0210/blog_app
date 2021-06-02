@@ -26,9 +26,9 @@ export default {
       tab: null,
       items: ["HOME", "話題", "サークル"],
       texts: [
-        {title: "1", url: "/"},
-        {title: "2", url: "/recommend"},
-        {title: "3", url: "/circle"},
+        {title: "HOME", url: "/"},
+        {title: "話題", url: "/recommend"},
+        {title: "サークル", url: "/circle"},
       ]
     }
   },
