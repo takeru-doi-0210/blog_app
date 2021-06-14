@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Homeページ</h1>
-    <button @click="getApi()">GET API</button>
+    <button @click="getApi">GET API</button>
     <p>{{message}}</p>
   </div>
 </template>
@@ -15,10 +15,9 @@ export default{
   },
   methods: {
     getApi() {
-      const url = "/api/v1/hello"
-      this.$axios.get(url)
+      this.$axios.get("http://localhost:3000/api/v1/hello")
       .then((res) => {
-        this.message = "aaa"
+        this.message = res.data
       })
       .catch((error) => {
         console.log(error)
