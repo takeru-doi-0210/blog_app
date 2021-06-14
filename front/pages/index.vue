@@ -1,8 +1,17 @@
 <template>
   <div>
     <h1>Homeページ</h1>
-    <button @click="getApi">GET API</button>
-    <p>{{message}}</p>
+    <v-btn 
+      @click="getUserIndex"
+      depressed
+      >ユーザ一覧を表示</v-btn>
+    <div v-for="user in users" v-bind:key="user.id">
+      <p>
+        {{user.name}} 
+        <br>
+        {{user.email}} 
+      </p>
+    </div>
   </div>
 </template>
 
@@ -11,13 +20,14 @@ export default{
   data: () => {
     return {
       message: '',
+      users: [],
     }
   },
   methods: {
-    getApi() {
+    getUserIndex() {
       this.$axios.get("http://localhost:3000/api/v1/index")
       .then((res) => {
-        this.message = res.data
+        this.users = res.data
       })
       .catch((error) => {
         console.log(error)
