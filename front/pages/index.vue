@@ -15,7 +15,7 @@ export default{
   },
   methods: {
     getApi() {
-      this.$axios.get("http://localhost:3000/api/v1/hello")
+      this.$axios.get("http://localhost:3000/api/v1/index")
       .then((res) => {
         this.message = res.data
       })
