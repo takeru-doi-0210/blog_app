@@ -29,9 +29,22 @@ export default{
       posts: [],
     }
   },
-  methods: {
-    getUserIndex() {
-      this.$axios.get("http://localhost:3000/api/v1/index")
+  // methods: {
+  //   getUserIndex() {
+  //     this.$axios.get("http://localhost:3000/api/v1/index")
+  //     .then((res) => {
+  //       this.total = res.data
+  //       this.users = this.total[0]
+  //       this.posts = this.total[1]
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  //   }
+  // },
+
+  mounted: function() {
+    this.$axios.get("http://localhost:3000/api/v1/index")
       .then((res) => {
         this.total = res.data
         this.users = this.total[0]
@@ -40,7 +53,6 @@ export default{
       .catch((error) => {
         console.log(error)
       })
-    }
   }
 
 }
